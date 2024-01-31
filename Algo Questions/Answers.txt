@@ -1,0 +1,29 @@
+TWO SUM
+
+var twoSum = function(nums, target) {
+     for(let i = 0; i < nums.length -1; i++){
+         for(let j = i+1; j < nums.length; j++){
+             if((nums[i] + nums[j]) === target){
+            return [i,j]
+        }
+
+         }
+        
+    }
+};
+--------------------------------------------------------------------------------------------------------------------
+Best Time to Buy and Sell Stock
+
+var maxProfit = function(prices) {
+    let minIndex = 0
+   let maxProfit = 0
+    for(let i = 1; i < prices.length; i++){
+        if(prices[minIndex] < prices[i]){
+            let profit = prices[i] - prices[minIndex]
+            maxProfit = Math.max(maxProfit,profit)
+        } else{
+            minIndex = i
+        }
+    }
+  return maxProfit
+};
